@@ -1,0 +1,13 @@
+release/
+.ssh/
+.git
+.idea
+.vscode
+.aws
+.env
+*.pem
+*.key
+*.log
+*.lock
+*.tmp
+authorized_keys

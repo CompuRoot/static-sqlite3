@@ -1,0 +1,16 @@
+.ssh/
+.git
+.idea
+.vscode
+.aws
+.env
+travis.yml
+*.pem
+*.key
+authorized_keys
+Dockerfile*
+docker-compose*
+README.md
+LICENSE
+config.json
+prerequisite.txt
