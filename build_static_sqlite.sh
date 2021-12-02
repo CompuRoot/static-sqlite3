@@ -1,7 +1,7 @@
 #!/bin/sh
 
 SQLITE_ZIP_URL='https://www.sqlite.org/2021/sqlite-amalgamation-3370000.zip'
-SQLite_compressor='upx'  # Programm to use for compressing compiled sqlite
+SQLite_compressor='upx'  # Program to use for compressing compiled sqlite
                          # Keep it empty as "" to disable compression
 
 DockerImage='static-sqlite'
@@ -16,7 +16,7 @@ onErr(){
   exit 1
 }
 
-errMsgDep="Cannot continue due to absents of required dependancy"
+errMsgDep="Cannot continue due to absence of required dependency"
 
 ID=$(type id); [ $? -eq 0 ] && ID="/${ID#*/}" || onErr "${errMsgDep}" 1
 
@@ -27,7 +27,7 @@ else
 fi
 
 DOCKER=$(type docker);
-[ $? -eq 0 ] && DOCKER="/${DOCKER#*/}" || onErr "Install please docker first..." 2
+[ $? -eq 0 ] && DOCKER="/${DOCKER#*/}" || onErr "Please install docker first..." 2
 
 $SUDO $DOCKER version  >/dev/null 2>&1
 [ $? -ne 0 ] && {
