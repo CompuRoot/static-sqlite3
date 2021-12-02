@@ -19,7 +19,7 @@ cd static-sqlite3
 Compiled file will be placed in `release` directory.
 
 You can also download already compiled, `sqlite3` program from [releases][1].<br>
-Verification hash of compiled `sqlite3` for v3.37.0 (Linux amd64 version) is: `cf040cd539f017b4eb5de26eb626247c92ba2a56086252a1cfd1efb14c0f79f9`
+Verification hash of compiled `sqlite3` for v3.37.0 (Linux amd64 version) is:<br>sha256: `cf040cd539f017b4eb5de26eb626247c92ba2a56086252a1cfd1efb14c0f79f9`
 
 ## Customization
 
