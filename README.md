@@ -1,6 +1,6 @@
 # static-sqlite3
 
-Compile a statically linked `sqlite3` for amd64 platforms due to abcense of statically compiled `sqlite3` program for amd64 Linux platforms on official site.
+Compile a statically linked `sqlite3` for amd64 platforms due to abcense of statically compiled `sqlite3` program for x64 Linux platforms on official site.
 
 ## Compilation Requirements
 Docker required (using official Linux distribution of alpine:latest)
@@ -25,9 +25,10 @@ Verification hash of compiled `sqlite3` for v3.37.0 (Linux amd64 version) is:<br
 
 - You can change `sqlite3` version to compile by edit file `build_static_sqlite.sh` . You need to supply direct link to official `sqlite3` download link in variable: `SQLITE_ZIP_URL`
 - By default compiled `sqlite3` stripped and packed with `upx` compressor. If you don’t want to have compressed version, keep variable `SQLite_compressor` empty.
+- You can change compile-time options by editing `docker/Build.sh` file before running `build_static_sqlite.sh`. As of now, `Build.sh` following closely to official recommendation with compile-time options.
 
 ## Motivation
-Make portable `sqlite3` program that can run without dependencies.
+Make portable `sqlite3` program that can run without dependencies on any x64 Linux.
 
 
 [1]: https://github.com/CompuRoot/static-sqlite3/releases
