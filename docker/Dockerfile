@@ -1,7 +1,6 @@
 FROM alpine:latest
 
-# Version of this Dockerfile
-ENV SCRIPT_VERSION=1.0.5
+LABEL org.sqlite.static.binary.linux.x86_64.dockerfile.version="1.0.6"
 
 ARG URL_SQLITE_SOURCE_ZIP
 ARG COMPRESS_SQLITE3
