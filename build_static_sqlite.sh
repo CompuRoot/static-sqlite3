@@ -40,9 +40,8 @@ $SUDO $DOCKER version  >/dev/null 2>&1
 
 cd ./docker
 
-#$SUDO $DOCKER build --no-cache -t static-sqlite .       \
-$SUDO $DOCKER build --rm -t "${DockerImage}" .          \
-  --build-arg URL_SQLITE_SOURCE_ZIP="${SQLITE_ZIP_URL}" \
+$SUDO $DOCKER build --rm --no-cache=true -t "${DockerImage}" .  \
+  --build-arg URL_SQLITE_SOURCE_ZIP="${SQLITE_ZIP_URL}"         \
   --build-arg COMPRESS_SQLITE3="${SQLite_compressor}"
 cd ..
 
