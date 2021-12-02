@@ -1,6 +1,6 @@
 # static-sqlite3
 
-Compile a statically linked `sqlite3` for amd64 platforms due to abcense of statically compiled `sqlite3` program for x64 Linux platforms on official site.
+Compile a statically linked `sqlite3` for amd64 platforms due to abcense of statically compiled `sqlite3` program for x86_64 Linux platforms on official site.
 
 ## Compilation Requirements
 Docker required (using official Linux distribution of alpine:latest)
@@ -19,7 +19,7 @@ cd static-sqlite3
 Compiled file will be placed in `release` directory.
 
 You can also download already compiled, `sqlite3` program from [releases][1].<br>
-Verification hash of compiled `sqlite3` for v3.37.0 (Linux amd64 version) is:<br>sha256: `cf040cd539f017b4eb5de26eb626247c92ba2a56086252a1cfd1efb14c0f79f9`
+Verification hash of compiled `sqlite3` for v3.37.0 (Linux x86_64 version) is:<br>sha256: `cf040cd539f017b4eb5de26eb626247c92ba2a56086252a1cfd1efb14c0f79f9`
 
 ## Customization
 
@@ -28,7 +28,7 @@ Verification hash of compiled `sqlite3` for v3.37.0 (Linux amd64 version) is:<br
 - You can change compile-time options by editing `docker/Build.sh` file before running `build_static_sqlite.sh`. As of now, `Build.sh` following closely to official recommendation with compile-time options.
 
 ## Motivation
-Make portable `sqlite3` program that can run without dependencies on any x64 Linux.
+Make portable `sqlite3` program that can run without dependencies on any x86_64 Linux.
 
 
 [1]: https://github.com/CompuRoot/static-sqlite3/releases
