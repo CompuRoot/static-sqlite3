@@ -4,14 +4,17 @@ src="${1}"
 arch="${src##*/}"
 workdir="${arch%.*}"
 
-[ ! -f "${arch}" ] && wget "${src}"
-[ $? -ne 0 ] && {
-  echo "===== FAILED ....... ==========================================================="
-  printf "Can not download: %s\n\n" "${src}"
-  exit 1
-}
 
-unzip ${arch}
+if [ ! -f "${arch}" ]; then
+  wget -c "${src}"
+  [ $? -ne 0 ] && {
+    echo "===== FAILED ....... ==========================================================="
+    printf "Can not download: %s\n\n" "${src}"
+    exit 1
+  }
+fi
+
+[ ! -f "${workdir}/sqlite3.c" ] && unzip ${arch}
 
 cd "${workdir}"
 
