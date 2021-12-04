@@ -1,3 +1,11 @@
+```
+     ____     ___    _       _   _            _____
+    / ___|   / _ \  | |     (_) | |_    ___  |___ /
+    \___ \  | | | | | |     | | | __|  / _ \   |_ \
+     ___) | | |_| | | |___  | | | |_  |  __/  ___) |
+    |____/   \__\_\ |_____| |_|  \__|  \___| |____/
+                                                    
+```
 # static-sqlite3
 
 Compile a statically linked `sqlite3` for amd64 platforms due to abcense of statically compiled `sqlite3` program for x86_64 Linux platforms on official site.
