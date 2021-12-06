@@ -19,7 +19,7 @@ Docker required (using official Linux distribution of alpine:latest)
 - compatible with classic `sh` shells, such as bash,dash,ash,etc
 
 - Optional:
-  - OpenSSH 8.0+ (to verify compiled files in [release][1] section)
+  - OpenSSH 8.0+ (to use `ssh-keygen` to verify compiled files in [release][1] section)
   - `git` (to pull conveniently this repository)
 
 ## Compiling
