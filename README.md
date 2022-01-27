@@ -51,4 +51,4 @@ and run following command in a download directory:
 Make portable `sqlite3` program that can run without dependencies on any x86_64 Linux.
 
 
-[1]: https://github.com/CompuRoot/static-sqlite3/releases# static-sqlite3
+[1]: https://github.com/CompuRoot/static-sqlite3/releases
