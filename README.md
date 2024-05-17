@@ -21,6 +21,7 @@ Docker required (using official Linux distribution of alpine:latest)
 - Optional:
   - OpenSSH 8.0+ (to use `ssh-keygen` to verify compiled files in [release][1] section)
   - `git` (to pull conveniently this repository)
+  - `gpg` (to verify signed tar.gz and zip archives)
 
 ## Compiling
 
@@ -39,6 +40,9 @@ and run following command in a download directory:
 ```
 <sqlite3 ssh-keygen -Y check-novalidate -n 'https://github.com/compuroot.file' -s sqlite3.sig
 ```
+Also, `tar.gz` and `zip` archives in release section are signed with GPG
+
+Starting from SQLite version 3.45.3, compiled versions of releases will be represented as `XX.XX.XX_ZZ` where `XX.XX.XX` will reflect actuall SQLite versions while `ZZ` will represent version of this building tool.
 
 ## Customization
 
@@ -48,7 +52,7 @@ and run following command in a download directory:
 
 ## Motivation
 
-Make portable `sqlite3` program that can run without dependencies on any x86_64 Linux.
+Make portable `sqlite3` program that can run without dependencies on any x86_64 Linux operation systems.
 
 
 [1]: https://github.com/CompuRoot/static-sqlite3/releases
