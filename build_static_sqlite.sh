@@ -18,16 +18,16 @@ onErr(){
 
 errMsgDep="Cannot continue due to absence of required dependency"
 
-ID=$(type id); [ $? -eq 0 ] && ID="/${ID#*/}" || onErr "${errMsgDep}" 1
+ID=$(command -v id); [ $? -ne 0 ] && onErr "${errMsgDep}" 1
 
 if [ $($ID -u) -eq 0 ]; then
   SUDO=''
 else
-  SUDO=$(type sudo); [ $? -eq 0 ] && SUDO="/${SUDO#*/}" || SUDO=''
+  SUDO=$(command -v sudo); [ $? -ne 0 ] && SUDO=''
 fi
 
-DOCKER=$(type docker);
-[ $? -eq 0 ] && DOCKER="/${DOCKER#*/}" || onErr "Please install docker first..." 2
+DOCKER=$(command -v docker);
+[ $? -eq 0 ] || onErr "Please install docker first..." 2
 
 $SUDO $DOCKER version  >/dev/null 2>&1
 [ $? -ne 0 ] && {
@@ -55,8 +55,6 @@ workdir="${arch%.*}"
 $SUDO $DOCKER run --rm -v $(pwd)/release:/release/  \
   -it "${DockerImage}"                              \
   cp -fv /app/${workdir}/sqlite3 /release/
-
-$SUDO $DOCKER stop "${DockerImage}"
 
 cd   release
 echo "=============================="

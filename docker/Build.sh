@@ -1,6 +1,6 @@
 #!/bin/sh
 
-src="${1}"
+src="${1}"          # SQLITE_URL_SRC
 arch="${src##*/}"
 workdir="${arch%.*}"
 
@@ -14,7 +14,7 @@ if [ ! -f "${arch}" ]; then
   }
 fi
 
-[ ! -f "${workdir}/sqlite3.c" ] && unzip ${arch}
+[ ! -f "${workdir}/sqlite3.c" ] && unzip ${arch} || exit 1
 
 cd "${workdir}"
 
@@ -46,10 +46,10 @@ gcc  -O2                \
 
 rc=$?
 if [ $rc -eq 0 ]; then
-  cp sqlite3 sqlite3_orig   # Keep naked, unstripped, unpacked version
-  echo "===== Stripping... ============================================================="
+  cp -av sqlite3 sqlite3_orig   # Keep naked, unstripped, unpacked version
+  echo "===== Stripping sqlite3 ... ===================================================="
   strip --strip-unneeded sqlite3
-  if [ -n "${2}" ]; then
+  if [ -n "${2}" ]; then    # $2 = name of compressor
     echo "===== Compressing... ==========================================================="
     $2 sqlite3
   fi
