@@ -8,7 +8,7 @@
 ```
 # static-sqlite3
 
-Compile a statically linked `sqlite3` for amd64 platforms due to abcense of statically compiled `sqlite3` program for x86_64 Linux platforms on official site.
+Compile a statically linked `sqlite3` for amd64 platforms due to absence of statically compiled `sqlite3` program for x86_64 Linux platforms on official site.
 
 ## Compilation Requirements
 Docker required (using official Linux distribution of alpine:latest)
@@ -42,7 +42,7 @@ and run following command in a download directory:
 ```
 Also, `tar.gz` and `zip` archives in release section are signed with GPG
 
-Starting from SQLite version 3.45.3, compiled versions of releases will be represented as `XX.XX.XX_ZZ` where `XX.XX.XX` will reflect actuall SQLite versions while `ZZ` will represent version of this building tool.
+Starting from SQLite version 3.45.3, compiled versions of releases will be represented as `XX.XX.XX_ZZ` where `XX.XX.XX` will reflect actual SQLite versions while `ZZ` will represent version of this building tool.
 
 ## Customization
 

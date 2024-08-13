@@ -1,4 +1,5 @@
 release/
+dist/
 misc/
 temp/
 .ssh/
@@ -12,4 +13,5 @@ temp/
 *.log
 *.lock
 *.tmp
+commit.sh
 authorized_keys
